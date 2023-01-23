@@ -9,7 +9,7 @@
     <title>{% block title %}OBR-Plomberie{% endblock %}</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+    {# <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet"> #}
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
     
 
@@ -40,7 +40,7 @@
                 </li>
             </ul>
             <div class="navbar-link" id="link-right">
-            {% if app.user != null and app.user.role == "ROLE_ADMIN" %}
+            {% if app.user != null and app.user.roles[0] == "ROLE_ADMIN" %}
                 <a href="#" style="color: white;">Profil Admin</a> | <a class="nav-item" href="#"  style="color: white;">Deconnection</a>               
             {% endif %}
             </div>
@@ -108,6 +108,11 @@
     <div class="container marketing w-75 my-5">
 
         {% block content %}
+        {% if app.flashes('success') %}
+        {% for message in app.flashes('success')%}
+        {{ message }}
+        {% endfor %}
+        {% endif %}
         {% endblock %}
         <!-- /END THE FEATURETTES -->
 
