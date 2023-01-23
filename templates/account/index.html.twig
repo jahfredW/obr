@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue Administrateur{% endblock %}
+
+{% block content %}
+<h1 class="text-center mb-4">Compte administrateur</h1>
+<hr>
+<div class="d-flex justify-content-between mt-4">
+    <div>Bienvenue {{ app.user.email }} dans votre espace personnel d'administration</div>
+    <ul class="list-group w-50 text-center">
+        <li class="list-group-item"><a href="" >Interface d'administration</a></li>
+        <li class="list-group-item"><a href="" >Modifier mon mot de passe</a></li>
+    </ul>
+</div>
+
+{% endblock %}
