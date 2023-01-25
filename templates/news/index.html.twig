@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello NewsController!{% endblock %}
+
+{% block content %}
+
+{% for article in articles %}
+{% if article.isActive %}
+    <hr>
+    <h1 class="text-center mb-4">{{ article.title  }}</h1>
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <img src="/uploads/images/news/{{ article.image }}" alt="" class="img-fluid img-thumbnail">
+            </div>
+            <div class="col-md-8 my-auto text-center">
+            <p style="word-wrap : break-word;">{{ article.description|striptags|replace({"&nbsp;": "\n"})|raw|nl2br }}</p>
+            </div>
+        </div>
+    <h4 class="text-end mb-5">Publié le : {{ article.createdAt|date('d-m-Y')}}</h4>
+{% endif %}
+{% endfor %}
+
+{% endblock %}

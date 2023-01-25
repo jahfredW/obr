@@ -5,6 +5,7 @@
 namespace App\EventSubscriber;
 
 use App\Entity\News;
+use App\Entity\Contact;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Event\BeforeEntityUpdatedEvent;
 use EasyCorp\Bundle\EasyAdminBundle\Event\BeforeEntityPersistedEvent;
@@ -44,7 +45,7 @@ class EasyAdminSubscriber implements EventSubscriberInterface
 
         $entityInstance = $event->getEntityInstance();
 
-        if (!$entityInstance instanceof News ) {
+        if (!$entityInstance instanceof News && !$entityInstance instanceof Contact ) {
             return;
         }
 

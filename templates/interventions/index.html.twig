@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des interventions{% endblock %}
+
+{% block content %}
+
+{% for intervention in interventions %}
+{% if intervention.isActive %}
+    <hr>
+    <h1 class="text-center mb-4">{{ intervention.title  }}</h1>
+        <div class="row">
+            {# <div class="col-md-4 text-center">
+                <img src="/uploads/images/news/{{ intervention.image }}" alt="" class="img-fluid img-thumbnail">
+            </div> #}
+            <div class="col-md-12 my-auto text-center">
+            <p style="word-wrap : break-word;">description : {{ intervention.description|striptags|replace({"&nbsp;": "\n"})|raw|nl2br }}</p>
+            <p style="word-wrap : break-word;">email : {{ intervention.email }}</p>
+            </div>
+        </div>
+    <h4 class="text-end mb-5">Publié le : {{ intervention.createdAt|date('d-m-Y')}}</h4>
+{% endif %}
+{% endfor %}
+{% endblock %}
