@@ -104,13 +104,29 @@ thead tr {
   border-bottom: 2px solid rgb(67, 36, 124);
 }
 
+.footer-custom, .navbar {
+  background-color : #918F95;
+}
 
+body .btn {
+  background-color: #b89c99;
+  color : white;
+}
+
+body img{
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: 100% 0;
+}
 
 @media (min-width: 768px) {
 .bd-placeholder-img-lg {
     font-size: 3.5rem;
 }
 }
+
+
 
 @media screen and (max-width: 480px){
   .footer-custom{

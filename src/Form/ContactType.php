@@ -19,33 +19,33 @@ class ContactType extends AbstractType
     {
         $builder
             ->add('title', TextType::class, [
-                'label' => 'nature de la demande', 
+                'label' => 'Nature de la demande', 
                 'attr' => [
-                    'placeholder' => "Entrer le type d'intervention"
+                    'placeholder' => "Type de panne"
                 ]
             ])
             ->add('description', TextareaType::class, [
                 "label" => 'Description',
                 "attr" => [
-                    "Expliquez votre souci en quelques mots"
+                    "placeholder" => "Expliquez votre souci en quelques mots"
                 ]
             ])
             ->add('name', TextType::class, [
                 "label" => 'Votre nom',
                 'attr' => [
-                    "Entrez votre nom"
+                    "placeholder" => "Entrez votre nom"
                 ]
             ])
             ->add('email', EmailType::class, [
                 "label" => 'Votre Email',
                 'attr' => [
-                    "Entrez votre email"
+                    "placeholder" => "Entrez votre email"
                 ]
             ])
             ->add('telephone', TextType::class, [
                 'label' => 'Votre téléphone',
                 'attr' => [
-                    "Entrez votre téléphone"
+                    "placeholder" => "Entrez votre téléphone"
                 ]
             ])
             // ->addEventListener(FormEvents::PRE_SET_DATA, function(FormEvent $event) {
@@ -53,7 +53,7 @@ class ContactType extends AbstractType
             //     dump($event->getForm());
             // })
             ->add('submit', SubmitType::class, [
-                'label' => "Demander intervention"
+                'label' => "Soumettre"
             ])
             
         ;

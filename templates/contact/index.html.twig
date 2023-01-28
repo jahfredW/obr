@@ -3,5 +3,10 @@
 {% block title %}Demande d'intervention{% endblock %}
 
 {% block content %}
+
+{% for message in app.flashes('intervention') %}
+{{ message }}
+{% endfor %}
+
 {{ form(form) }}
 {% endblock %}
