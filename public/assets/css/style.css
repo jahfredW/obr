@@ -91,9 +91,10 @@ text-decoration: none;
   margin-bottom: 5vw;
 }
 
-body {
+html body {
   position: relative;
   background-repeat: no-repeat;
+  background-color: #e4f0f9;
 }
 
 #price :parent {

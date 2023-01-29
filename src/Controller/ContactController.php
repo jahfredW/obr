@@ -24,14 +24,15 @@ class ContactController extends AbstractController
     public function __construct(EntityManagerInterface $em){
         $this->em = $em;
     }
-    #[Route('/interventions', name: 'app_contact')]
-    public function index(EventDispatcherInterface $dispatcher,Request $request): Response
+    #[Route('/interventions/{type}', name: 'app_contact',  defaults :["type" => "type de la demande"])]
+    public function index(EventDispatcherInterface $dispatcher,Request $request, $type): Response
     {
         // $dispatcher->dispatch(AccountChangeNotifier::class);
         $intervention = new Contact();
+        $intervention->setTitle($type);
 
         $form = $this->createForm(ContactType::class, $intervention);
-
+        
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
@@ -67,7 +68,7 @@ class ContactController extends AbstractController
         }
         
         return $this->render('contact/index.html.twig', [
-            'form' =>$form
+            'form' => $form,
         ]);
     }
 }

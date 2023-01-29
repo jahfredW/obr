@@ -1,0 +1,123 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des prestations{% endblock %}
+
+{% block content %}
+
+{% set path = app.request.get('type') %}
+{% if path == 'sanitaires' %}
+<div class="mx-auto">
+<div class="row">
+    <div class="col">
+        <div class="card text-black mb-5">
+            <div class="card-body">
+                <h5 class="card-title">dépannages</h5>
+                <hr>
+                <p class="card-text">Recherche de fuite</a></p>
+                <p class="card-text">Accessoires du lavabo et de l'évier</a></p>
+                <p class="card-text">Tuyauterie d'alimentation et de vidange</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card text-black mb-5">
+            <div class="card-body">
+                <h5 class="card-title">Robinetterie</h5>
+                <hr>
+                <p class="card-text">Remplacement ou réparation</a></p>
+                <p class="card-text">Ajout ou suppression</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card text-black mb-5">
+            <div class="card-body">
+                <h5 class="card-title">WC</h5>
+                <hr>
+                <p class="card-text">Remplacement ou ajout</a></p>
+                <p class="card-text">Changement ou réparation de système de chasse</a></p>
+                <p class="card-text">Modification de la Tuyauterie des eaux noires</a></p>
+            </div>
+        </div>
+    </div>
+    <h5 class="card-title alert text-center"><a class="btn" href="{{ path('app_contact', { 'type' : 'Dépannage sanitaire'}) }}">=> Demander une prestation</a></h5>
+</div> 
+</div>
+{% elseif path == 'chaudieres' %}
+<div class="row">
+    <div class="col-12 mb-3">
+        <h5>Entretiens et dépannages des chaudières à gaz</h5>
+        <p>Démontage brûleurs, nettoyage ionisation et électrode d’allumage. Equilibrage vase d’expansion, démontage et nettoyage siphon, inspection et nettoyage 
+        corps de chauffe, vidange chaudière et rééquilibrage hydraulique. Test d’étanchéité des raccords gaz. Remise en fonctionnement, 
+        essais eau chaude et chauffage, tests de combustion (Testo)</p>
+    </div>
+    <div class="col-12 w-md-50 mx-auto">
+        <div class="card text-black mb-5 text-center">
+            <div class="card-body">
+                <p class="card-text">Recherche de panne</a></p>
+                <p class="card-text">Devis de réparations</a></p>
+                <p class="card-text">Commandes de pièces détachées</a></p>
+                <p class="card-text">Explications techniques des pannes</a></p>
+                <hr>
+                <h5 class="card-title"><a class="btn" href="{{ path('app_contact', { 'type' : 'Dépannage chaudière'}) }}">=> Demander une prestation</a></h5>
+            </div>
+        </div>
+    </div>
+</div>
+{% elseif path == 'plomberie' %}
+<div class="row w-md-50 mx-auto">
+    <div class="col-12">
+        <div class="card text-black mb-5">
+            <div class="card-body">
+                <h5 class="card-title">Plomberie</h5>
+                <hr>
+                <p class="card-text">Diagnostic des pannes, recherches de fuites</a></p>
+                <p class="card-text">Installation de réseaux et d'équipements de mesures</a></p>
+                <p class="card-text">Réparation de tuyauteries percées</a></p>
+                <p class="card-text">Ajout ou remplacement de la robinetterie intérieur et extérieur</a></p>
+                <hr>
+                <h5 class="card-title"><a class="btn" href="{{ path('app_contact', { 'type' : 'Dépannage plomberie'}) }}">=> Demander une prestation</a></h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% elseif path == 'vmc' %}
+
+<div class="row w-md-50 mx-auto">
+    <div class="col-12">
+        <div class="card text-black mb-5">
+            <div class="card-body">
+                <h5 class="card-title">vMC</h5>
+                <hr>
+                <p class="card-text">Remplacement de caissons</p>
+                <p class="card-text">Installations neuves</p>
+                <p class="card-text">Entretien</p>
+                <p class="card-text">Mesures de débit ( Anémomètre Testo)</p>
+                <hr>
+                <h5 class="card-title"><a class="btn" href="{{ path('app_contact', { 'type' : 'Dépannage VMC'}) }}">=> Demander une prestation</a></h5>
+            </div>
+        </div>
+    </div>
+</div>
+{% elseif path == 'bains' %}
+<div class="row w-md-50 mx-auto">
+    <div class="col-12">
+        <div class="card text-black mb-5">
+            <div class="card-body">
+                <h5 class="card-title">Bains</h5>
+                <hr>
+                <p class="card-text">Réaménagement (ajout ou suppression d'équipements)</p>
+                <p class="card-text">ajout ou suppression de la baignoire</p>
+                <p class="card-text">installation du mobilier</p>
+                <p class="card-text">Application des peintures</p>
+                <p class="card-text">Revêtement de sol (hors carrelage)</p>
+                <p class="card-text">Etude et conception en 3d</p>
+                <hr>
+                <h5 class="card-title"><a class="btn" href="{{ path('app_contact', { 'type' : 'Dépannage bains'}) }}">=> Demander une prestation</a></h5>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

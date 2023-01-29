@@ -42,10 +42,8 @@ class AccountPasswordType extends AbstractType
                 ]
             ])
             ->add('submit', SubmitType::class , [
-                'label' => "S'inscrire",
-                'attr' => [
-                    'class' => 'btn-secondary'
-                ]
+                'label' => "Soumettre"
+                
             ])
         ;
     }
@@ -54,6 +52,7 @@ class AccountPasswordType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => User::class,
+            'method' => 'POST'
         ]);
     }
 }
