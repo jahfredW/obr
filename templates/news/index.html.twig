@@ -3,7 +3,9 @@
 {% block title %}Hello NewsController!{% endblock %}
 
 {% block content %}
-    
+
+<h1>Les news : </h1>
+
 {% for article in articles %}
 {% if article.isActive %}
     <hr>
@@ -19,5 +21,6 @@
     <h4 class="text-end mb-5">Publié le : {{ article.createdAt|date('d-m-Y')}}</h4>
 {% endif %}
 {% endfor %}
+
 
 {% endblock %}
